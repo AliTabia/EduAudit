@@ -1,0 +1,9 @@
+from .documents import router as documents_router
+from .audit import router as audit_router
+from .similarity import router as similarity_router
+from .auth import router as auth_router
+from .news import router as news_router
+from .advanced import router as advanced_router
+from .admin import router as admin_router
+from .websocket import router as websocket_router
+from .insights import router as insights_router

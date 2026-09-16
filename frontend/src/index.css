@@ -1,0 +1,106 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* ESPRIT Brand */
+  --esprit-red:        #D01012;
+  --esprit-red-dark:   #a80d0f;
+  --esprit-red-deeper: #870a0c;
+  --esprit-red-light:  #fdf1f1;
+  --esprit-red-muted:  #f9e0e0;
+
+  /* Neutrals */
+  --color-bg:          #f4f6f9;
+  --color-surface:     #ffffff;
+  --color-border:      #e4e8ef;
+  --color-border-light:#f0f2f7;
+  --color-text:        #0f172a;
+  --color-text-muted:  #5a6478;
+  --color-text-light:  #9aa3b5;
+
+  /* Accent */
+  --color-primary:      var(--esprit-red);
+  --color-primary-dark: var(--esprit-red-dark);
+  --color-primary-light:var(--esprit-red-light);
+
+  /* Success / Warning / Danger */
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-danger:  #dc2626;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,.06);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.07);
+  --shadow-md: 0 4px 20px rgba(0,0,0,.09);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,.12);
+  --shadow-red: 0 4px 20px rgba(208,16,18,.25);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+
+  --transition: 0.18s ease;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: var(--esprit-red); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #c0c7d4; }
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--esprit-red) !important;
+  box-shadow: 0 0 0 3px rgba(208,16,18,.12);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity:0; transform:translateY(12px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes slideInRight {
+  from { opacity:0; transform:translateX(20px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+@keyframes pulse-dot {
+  0%,100% { opacity:1; } 50% { opacity:.4; }
+}
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.fade-in-up  { animation: fadeInUp .4s ease both; }
+.slide-right { animation: slideInRight .35s ease both; }
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f2f5 25%, #e4e8ef 50%, #f0f2f5 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+
+.sr-only {
+  position:absolute; width:1px; height:1px; padding:0;
+  margin:-1px; overflow:hidden; clip:rect(0,0,0,0);
+  white-space:nowrap; border:0;
+}
